@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Basis Data</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    /* Header gradasi */
+    header {
+      background: linear-gradient(90deg, #1e3c72, #9d50bb);
+      color: white;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    /* Profil bulat */
+    .profile-container {
+      margin-top: 40px;
+      position: relative;
+      display: inline-block;
+      animation: rollIn 2s ease forwards;
+    }
+
+    .profile-container img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #9d50bb;
+    }
+
+    @keyframes rollIn {
+      0% { transform: translateX(-300px) rotate(-360deg); opacity: 0; }
+      100% { transform: translateX(0) rotate(0); opacity: 1; }
+    }
+
+    /* Nama & Info */
+    .info {
+      margin-top: 15px;
+      font-size: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Lingkaran menu */
+    .circle-menu {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 20px;
+    }
+
+    .circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e3c72, #9d50bb);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
+
+    .circle.active {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px rgba(157, 80, 187, 0.7);
+    }
+
+    /* Konten */
+    .content {
+      margin-top: 30px;
+      font-size: 18px;
+      min-height: 100px;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .content.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Basis Data</header>
+
+  <div class="profile-container">
+    <img src="https://via.placeholder.com/120" alt="Foto Profil">
+  </div>
+  <div class="info">
+    <div><strong>Sandy</strong></div>
+    <div>NIM: 12345678 - Web UBP Karawang</div>
+  </div>
+
+  <div class="circle-menu">
+    <div class="circle" onclick="showContent(1)">1</div>
+    <div class="circle" onclick="showContent(2)">2</div>
+    <div class="circle" onclick="showContent(3)">3</div>
+    <div class="circle" onclick="showContent(4)">4</div>
+  </div>
+
+  <div id="content-1" class="content">Isi untuk poin 1 (bisa diganti sendiri)</div>
+  <div id="content-2" class="content">Isi untuk poin 2 (bisa diganti sendiri)</div>
+  <div id="content-3" class="content">Isi untuk poin 3 (bisa diganti sendiri)</div>
+  <div id="content-4" class="content">Isi untuk poin 4 (bisa diganti sendiri)</div>
+
+  <script>
+    function showContent(num) {
+      // Reset semua konten
+      document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.circle').forEach(c => c.classList.remove('active'));
+
+      // Aktifkan yang dipilih
+      document.getElementById("content-" + num).classList.add('active');
+      document.querySelectorAll('.circle')[num - 1].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
 
