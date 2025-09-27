@@ -81,7 +81,7 @@
 
     /* Modal */
     .modal {
-      display: none; 
+      display: none;  /* awalnya none, nanti diubah ke flex pakai JS */
       position: fixed;
       z-index: 1000;
       left: 0; 
@@ -89,7 +89,6 @@
       width: 100%; 
       height: 100%;
       background: rgba(0,0,0,0.5);
-      display: flex;
       align-items: center;
       justify-content: center;
     }
@@ -147,14 +146,10 @@
 
   <script>
     const contents = {
-      1: "Harapan (Agar saya memahami konsep dasar basis data — mulai dari model data, rancangan, hingga implementasi fisik.
-Mampu membuat skema basis data yang baik (normalisasi, integritas data).)",
-      2: "Basis Data (Basis data (database) adalah kumpulan data yang terorganisir untuk disimpan dan dikelola agar bisa diakses, dimodifikasi, dan dikelola secara efisien.
-Basis data memungkinkan integritas data, konsistensi, dan kemudahan dalam pengambilan (query) serta manipulasi data.)",
-      3: "Conceptual (Model konseptual adalah representasi abstrak data dan relasi antar entitas dari perspektif bisnis (tanpa memikirkan sistem/DBMS).
-Umumnya digambarkan dengan ER diagram (Entitas – Relasi).)",
-      4: "Physical (Model fisik adalah implementasi nyata model konseptual ke dalam struktur DBMS tertentu (tabel, kolom, tipe data, indeks, constraint).
-Menentukan jenis data (INTEGER, VARCHAR, DATE, TEXT), primary key, foreign key, indeks, dan optimasi lainnya.)"
+      1: "Harapan: Agar saya memahami konsep dasar basis data — mulai dari model data, rancangan, hingga implementasi fisik. Mampu membuat skema basis data yang baik (normalisasi, integritas data).",
+      2: "Basis Data: Basis data adalah kumpulan data yang terorganisir untuk disimpan dan dikelola agar bisa diakses, dimodifikasi, dan dikelola secara efisien. Basis data memungkinkan integritas data, konsistensi, dan kemudahan dalam query.",
+      3: "Conceptual: Model konseptual adalah representasi abstrak data dan relasi antar entitas dari perspektif bisnis (tanpa memikirkan sistem/DBMS). Umumnya digambarkan dengan ER diagram (Entitas – Relasi).",
+      4: "Physical: Model fisik adalah implementasi nyata model konseptual ke dalam struktur DBMS (tabel, kolom, tipe data, indeks, constraint). Menentukan jenis data, primary key, foreign key, dan optimasi lainnya."
     };
 
     function showContent(num) {
