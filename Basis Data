@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basis Data — Sandy</title>
+  <style>
+    /* ==== STYLE DASAR ==== */
+    * {margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;}
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, #4f46e5 0%, #7e22ce 100%);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #c084fc;
+    }
+
+    section {
+      padding: 100px 20px 60px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      border-left: 5px solid #c084fc;
+      padding-left: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #f3e8ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #e0e7ff;
+    }
+
+    .materi, .tugas, .kontak {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .materi ul, .tugas ol {
+      margin-left: 20px;
+      color: #f3e8ff;
+    }
+
+    .materi li, .tugas li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+      margin-top: 50px;
+      font-size: 14px;
+      color: #d1d5db;
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 600px) {
+      header {flex-direction: column; text-align: center;}
+      nav a {margin: 5px;}
+      .hero h1 {font-size: 30px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==== NAVBAR ==== -->
+  <header>
+    <h1>Basis Data</h1>
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#materi">Materi</a>
+      <a href="#tugas">Tugas</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- ==== BERANDA ==== -->
+  <section id="beranda" class="hero">
+    <h1>Selamat Datang di Website Basis Data</h1>
+    <p>Website ini berisi materi dan tugas seputar Basis Data — dibuat oleh Sandy.</p>
+  </section>
+
+  <!-- ==== MATERI ==== -->
+  <section id="materi">
+    <div class="materi">
+      <h2>Materi Basis Data</h2>
+      <p>Basis data adalah kumpulan data yang terorganisir dan dapat diakses dengan mudah secara elektronik. Sistem Manajemen Basis Data (DBMS) seperti MySQL, PostgreSQL, dan SQLite membantu kita mengelola data secara efisien.</p>
+
+      <h3 style="margin-top:15px;">Konsep Dasar:</h3>
+      <ul>
+        <li><b>Database</b> — tempat penyimpanan data.</li>
+        <li><b>Tabel</b> — struktur yang menyimpan data dalam baris dan kolom.</li>
+        <li><b>Primary Key</b> — kolom unik untuk setiap baris data.</li>
+        <li><b>Relasi</b> — hubungan antar tabel (One-to-One, One-to-Many, Many-to-Many).</li>
+      </ul>
+
+      <h3 style="margin-top:15px;">Contoh Query SQL:</h3>
+      <pre style="background:#1e1b4b;padding:10px;border-radius:8px;overflow:auto;">
+CREATE TABLE Mahasiswa (
+  NIM CHAR(10) PRIMARY KEY,
+  Nama VARCHAR(50),
+  Jurusan VARCHAR(30)
+);
+
+INSERT INTO Mahasiswa VALUES ('2401010001', 'Sandy Tirta', 'Informatika');
+      </pre>
+    </div>
+  </section>
+
+  <!-- ==== TUGAS ==== -->
+  <section id="tugas">
+    <div class="tugas">
+      <h2>Tugas Basis Data</h2>
+      <ol>
+        <li>Buat database <b>kampus</b> di MySQL.</li>
+        <li>Buat tabel <b>mahasiswa</b> dengan kolom NIM, Nama, Jurusan.</li>
+        <li>Masukkan minimal 5 data mahasiswa.</li>
+        <li>Tampilkan seluruh data mahasiswa dengan perintah <code>SELECT *</code>.</li>
+        <li>Ubah nama salah satu mahasiswa menggunakan <code>UPDATE</code>.</li>
+        <li>Hapus satu data dengan <code>DELETE</code>.</li>
+      </ol>
+
+      <p style="margin-top:15px;">Kumpulkan hasil screenshot atau file SQL-nya sesuai petunjuk dosen.</p>
+    </div>
+  </section>
+
+  <!-- ==== KONTAK ==== -->
+  <section id="kontak">
+    <div class="kontak">
+      <h2>Kontak</h2>
+      <p><b>Nama:</b> Sandy</p>
+      <p><b>Email:</b> <a href="mailto:if24.sandy@mhs.ubpkarawang.ac.id" style="color:#c084fc;">if24.sandy@mhs.ubpkarawang.ac.id</a></p>
+      <p><b>Instagram:</b> <a href="https://www.instagram.com/santirta_" target="_blank" style="color:#c084fc;">@santirta_</a></p>
+    </div>
+  </section>
+
+  <!-- ==== FOOTER ==== -->
+  <footer>
+    © <span id="year"></span> Sandy — Website Basis Data | Dibuat dengan 💜
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
